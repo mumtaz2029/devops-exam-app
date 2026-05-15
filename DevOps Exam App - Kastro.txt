@@ -212,15 +212,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "kastrov/devopsexamapp:latest"
+        DOCKER_IMAGE = "mumtaz2029/devopsexamapp:latest"
         SCANNER_HOME = tool 'sonar-scanner'
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git url: 'https://github.com/KastroVKiran/devops-exam-app.git', 
-                    branch: 'master'
+                 git url: 'https://github.com/mumtaz2029/devops-exam-app.git',
+                 branch:'master'
             }
         }
 
@@ -258,7 +258,7 @@ pipeline {
             steps {
                 dir('backend') {
                     script {
-                        withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        withDockerRegistry(credentialsId: 'docker') {
                             sh "docker build -t ${DOCKER_IMAGE} ."
                             // Push the image to Docker Hub if needed
                             sh "docker push ${DOCKER_IMAGE}"
@@ -272,7 +272,7 @@ pipeline {
         stage('Docker Scout Image Analysis') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'docker') {
                         sh "docker-scout quickview ${DOCKER_IMAGE}"
                         sh "docker-scout cves ${DOCKER_IMAGE}"
                         sh "docker-scout recommendations ${DOCKER_IMAGE}"
