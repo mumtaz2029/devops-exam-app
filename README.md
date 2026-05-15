@@ -1,8 +1,5 @@
-I have Watched the video : https://youtu.be/BScNFDBdE7M
+I have Watched the Youtube video : https://youtu.be/BScNFDBdE7M
 and learned how to deploy a 3-tier-application (based on docker compose intigrated with Jenkins)
-
-I’ll put it into a clean copy-paste format without extra formatting.
-
 
 TROUBLESHOOTING AND CHALLENGES FACED DURING 3-TIER APPLICATION DEPLOYMENT
 
@@ -166,6 +163,9 @@ Outcome:
 OVERALL PROJECT OUTCOME
 
 Despite multiple deployment challenges, the 3-tier application CI/CD pipeline was successfully stabilized through systematic troubleshooting and root cause analysis.
+
+<img width="1908" height="1035" alt="Screenshot 2026-05-15 174917" src="https://github.com/user-attachments/assets/9d71417c-ff12-40c9-917d-ad8b1aa00d9f" />
+
 
 Technologies Used:
 - Jenkins for CI/CD
